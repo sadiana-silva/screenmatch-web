@@ -1,6 +1,7 @@
 package br.com.alura.screenmatch.controller;
 
 import br.com.alura.screenmatch.dto.SerieDTO;
+import br.com.alura.screenmatch.model.Serie;
 import br.com.alura.screenmatch.service.SerieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +25,10 @@ public class SerieController {
     @GetMapping("/top5")
     public List<SerieDTO> obterTop5Series () {
         return servico.obterTop5Series();
+    }
+
+    @GetMapping("/lancamentos")
+    public List<SerieDTO> obterLancamento() {
+        return servico.obterLancamento();
     }
 }

@@ -31,4 +31,8 @@ public class SerieService {
                 .map(s -> new SerieDTO(s.getId(), s.getTitulo(), s.getTotalTemporadas(), s.getAvaliacao(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse()))
                 .collect(Collectors.toList());
     }
+
+    public List<SerieDTO> obterLancamento() {
+        return converteDados(repositorio.findTop5ByOrderByEpisodiosDataLancamentoDesc());
+    }
 }
